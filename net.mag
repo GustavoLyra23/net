@@ -1,4 +1,7 @@
 importar "core/socket.mag"
 importar "http/status.mag"
+importar "http/metodos.mag"
+importar "http/headers.mag"
 importar "http/http.mag"
+importar "url/url.mag"
 importar "utils/texto.mag"
