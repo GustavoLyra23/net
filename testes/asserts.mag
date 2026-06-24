@@ -1,0 +1,11 @@
+funcao afirmar(cond: Logico, nome: Texto) {
+    se (cond) {
+        imprimir("PASS:", nome);
+    } senao {
+        imprimir("FALHA:", nome);
+    }
+}
+
+funcao afirmarIgual(obtido, esperado, nome: Texto) {
+    afirmar(obtido == esperado, nome);
+}

@@ -1,0 +1,7 @@
+importar "net.mag"
+importar "testes/asserts.mag"
+
+afirmarIgual(repetir("ab", 3), "ababab", "repetir");
+afirmar(vazio(""), "vazio string vazia");
+afirmar(vazio("x") == falso, "vazio string nao vazia");
+afirmar(naoVazio("x"), "naoVazio");

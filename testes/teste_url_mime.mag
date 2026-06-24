@@ -1,0 +1,13 @@
+importar "net.mag"
+importar "testes/asserts.mag"
+
+afirmarIgual(autoridade("api.com", 443), "api.com:443", "autoridade");
+afirmarIgual(montarUrl("localhost", 8080, "/x"), "http://localhost:8080/x", "montarUrl");
+afirmarIgual(comQuery("http://h/x", "q", "mag"), "http://h/x?q=mag", "comQuery");
+afirmarIgual(maisQuery("http://h/x?a=1", "b", "2"), "http://h/x?a=1&b=2", "maisQuery");
+afirmarIgual(tipoPorExtensao("json"), "application/json", "mime json");
+afirmarIgual(tipoPorExtensao("png"), "image/png", "mime png");
+afirmarIgual(tipoPorExtensao("xyz"), "application/octet-stream", "mime desconhecido");
+afirmar(ehPortaValida(8080), "porta 8080 valida");
+afirmar(ehPortaValida(70000) == falso, "porta 70000 invalida");
+afirmar(ehPortaPrivilegiada(80), "porta 80 privilegiada");

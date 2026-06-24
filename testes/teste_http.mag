@@ -1,0 +1,12 @@
+importar "net.mag"
+importar "testes/asserts.mag"
+
+afirmarIgual(linhaStatus(200), "HTTP/1.1 200 OK", "linhaStatus 200");
+afirmarIgual(linhaStatus(404), "HTTP/1.1 404 Not Found", "linhaStatus 404");
+afirmarIgual(requisicao("GET", "/api/users"), "GET /api/users HTTP/1.1", "requisicao");
+afirmarIgual(cabecalho("Host", "x.com"), "Host: x.com", "cabecalho");
+afirmarIgual(resposta(201, "criado"), "HTTP/1.1 201 Created | criado", "resposta");
+afirmarIgual(contentType("text/css"), "Content-Type: text/css", "contentType");
+afirmarIgual(contentLength("hello"), "Content-Length: 5", "contentLength");
+afirmarIgual(tipoJson(), "Content-Type: application/json; charset=utf-8", "tipoJson");
+afirmarIgual(autorizacaoBearer("tok"), "Authorization: Bearer tok", "bearer");

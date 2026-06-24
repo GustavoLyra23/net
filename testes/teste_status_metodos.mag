@@ -1,0 +1,16 @@
+importar "net.mag"
+importar "testes/asserts.mag"
+
+afirmarIgual(statusTexto(200), "OK", "status 200");
+afirmarIgual(statusTexto(404), "Not Found", "status 404");
+afirmarIgual(statusTexto(418), "I'm a teapot", "status 418");
+afirmar(ehSucesso(204), "ehSucesso 204");
+afirmar(ehErroCliente(404), "ehErroCliente 404");
+afirmar(ehErroServidor(500), "ehErroServidor 500");
+afirmar(ehRedirecionamento(302), "ehRedirecionamento 302");
+afirmar(ehMetodoValido(POST), "metodo POST valido");
+afirmar(ehMetodoValido("FOO") == falso, "metodo FOO invalido");
+afirmar(temCorpo(POST), "POST tem corpo");
+afirmar(temCorpo(GET) == falso, "GET sem corpo");
+afirmar(ehCodigoStatusValido(200), "codigo 200 valido");
+afirmar(ehCodigoStatusValido(99) == falso, "codigo 99 invalido");
