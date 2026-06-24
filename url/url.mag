@@ -1,0 +1,15 @@
+funcao autoridade(host: Texto, porta: Inteiro) {
+    retornar host + ":" + porta;
+}
+
+funcao montarUrl(host: Texto, porta: Inteiro, caminho: Texto) {
+    retornar "http://" + host + ":" + porta + caminho;
+}
+
+funcao comQuery(url: Texto, chave: Texto, valor: Texto) {
+    retornar url + "?" + chave + "=" + valor;
+}
+
+funcao maisQuery(url: Texto, chave: Texto, valor: Texto) {
+    retornar url + "&" + chave + "=" + valor;
+}
