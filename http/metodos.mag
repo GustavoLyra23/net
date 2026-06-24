@@ -1,0 +1,22 @@
+var GET = "GET";
+var POST = "POST";
+var PUT = "PUT";
+var PATCH = "PATCH";
+var DELETE = "DELETE";
+var HEAD = "HEAD";
+var OPTIONS = "OPTIONS";
+
+funcao ehMetodoValido(m: Texto) {
+    se (m == "GET") { retornar verdadeiro; }
+    se (m == "POST") { retornar verdadeiro; }
+    se (m == "PUT") { retornar verdadeiro; }
+    se (m == "PATCH") { retornar verdadeiro; }
+    se (m == "DELETE") { retornar verdadeiro; }
+    se (m == "HEAD") { retornar verdadeiro; }
+    se (m == "OPTIONS") { retornar verdadeiro; }
+    retornar falso;
+}
+
+funcao temCorpo(m: Texto) {
+    retornar m == "POST" ou m == "PUT" ou m == "PATCH";
+}
