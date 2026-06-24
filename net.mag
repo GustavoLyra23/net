@@ -1,32 +1,4 @@
-var PORTA_PADRAO = 8080;
-var HOST_LOCAL = "localhost";
-
-funcao escutar(host: Texto, porta: Inteiro) {
-    retornar ler_socket(host, porta);
-}
-
-funcao escutar_local(porta: Inteiro) {
-    retornar ler_socket(HOST_LOCAL, porta);
-}
-
-funcao responder(host: Texto, porta: Inteiro, mensagem: Texto) {
-    escrever_socket(host, porta, mensagem);
-}
-
-funcao responder_local(porta: Inteiro, mensagem: Texto) {
-    escrever_socket(HOST_LOCAL, porta, mensagem);
-}
-
-funcao resposta_ok(corpo: Texto) {
-    retornar "200 OK " + corpo;
-}
-
-funcao resposta_erro(codigo: Inteiro, corpo: Texto) {
-    retornar codigo + " ERRO " + corpo;
-}
-
-funcao eco(host: Texto, porta: Inteiro) {
-    var recebido = ler_socket(host, porta);
-    escrever_socket(host, porta, "eco: " + recebido);
-    retornar recebido;
-}
+importar "core/socket.mag"
+importar "http/status.mag"
+importar "http/http.mag"
+importar "utils/texto.mag"

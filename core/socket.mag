@@ -1,0 +1,24 @@
+var PORTA_PADRAO = 8080;
+var HOST_LOCAL = "localhost";
+
+funcao escutar(host: Texto, porta: Inteiro) {
+    retornar ler_socket(host, porta);
+}
+
+funcao escutar_local(porta: Inteiro) {
+    retornar ler_socket(HOST_LOCAL, porta);
+}
+
+funcao responder(host: Texto, porta: Inteiro, mensagem: Texto) {
+    escrever_socket(host, porta, mensagem);
+}
+
+funcao responder_local(porta: Inteiro, mensagem: Texto) {
+    escrever_socket(HOST_LOCAL, porta, mensagem);
+}
+
+funcao eco(host: Texto, porta: Inteiro) {
+    var recebido = ler_socket(host, porta);
+    escrever_socket(host, porta, "eco: " + recebido);
+    retornar recebido;
+}
