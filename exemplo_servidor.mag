@@ -1,12 +1,3 @@
-// exemplo_servidor.mag - servidor de eco minimo usando net.mag
-//
-// Inicia um servidor que aguarda UMA conexao na porta 8080,
-// imprime a linha recebida e envia uma resposta de volta.
-//
-// Em outro terminal, teste com:
-//     printf 'ola mundo\n' | nc localhost 8080
-//
-// Obs: cada chamada de socket abre/fecha uma conexao (protocolo de linha).
 importar "net.mag"
 
 imprimir("Servidor escutando em localhost:8080 ...");
