@@ -1,0 +1,25 @@
+importar "http/status.mag"
+
+funcao linhaStatus(codigo: Inteiro) {
+    retornar "HTTP/1.1 " + codigo + " " + statusTexto(codigo);
+}
+
+funcao requisicao(metodo: Texto, caminho: Texto) {
+    retornar metodo + " " + caminho + " HTTP/1.1";
+}
+
+funcao cabecalho(nome: Texto, valor: Texto) {
+    retornar nome + ": " + valor;
+}
+
+funcao resposta(codigo: Inteiro, corpo: Texto) {
+    retornar linhaStatus(codigo) + " | " + corpo;
+}
+
+funcao respostaOk(corpo: Texto) {
+    retornar resposta(200, corpo);
+}
+
+funcao respostaErro(codigo: Inteiro, corpo: Texto) {
+    retornar resposta(codigo, corpo);
+}
