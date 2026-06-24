@@ -1,0 +1,15 @@
+funcao repetir(s: Texto, n: Inteiro) {
+    var r = "";
+    para (var i = 0; i < n; i = i + 1) {
+        r = r + s;
+    }
+    retornar r;
+}
+
+funcao vazio(s: Texto) {
+    retornar tamanho(s) == 0;
+}
+
+funcao naoVazio(s: Texto) {
+    retornar tamanho(s) > 0;
+}
