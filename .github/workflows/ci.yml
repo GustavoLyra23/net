@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Build Mag interpreter
+        run: |
+          git clone --depth 1 https://github.com/GustavoLyra23/mag.git /tmp/mag
+          cd /tmp/mag
+          chmod +x gradlew
+          ./gradlew shadowJar -q
+
+      - name: Run tests
+        env:
+          MAG_JAR: /tmp/mag/build/libs/mag.jar
+        run: bash run_tests.sh
