@@ -1,0 +1,23 @@
+funcao contentType(valor: Texto) {
+    retornar "Content-Type: " + valor;
+}
+
+funcao contentLength(corpo: Texto) {
+    retornar "Content-Length: " + tamanho(corpo);
+}
+
+funcao tipoTexto() {
+    retornar "Content-Type: text/plain; charset=utf-8";
+}
+
+funcao tipoJson() {
+    retornar "Content-Type: application/json; charset=utf-8";
+}
+
+funcao tipoHtml() {
+    retornar "Content-Type: text/html; charset=utf-8";
+}
+
+funcao autorizacaoBearer(token: Texto) {
+    retornar "Authorization: Bearer " + token;
+}
