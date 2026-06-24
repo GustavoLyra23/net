@@ -2,11 +2,13 @@ importar "net.mag"
 
 imprimir(linhaStatus(200));
 imprimir(linhaStatus(404));
-imprimir(requisicao("GET", "/api/users"));
+imprimir(requisicao(GET, "/api/users"));
 imprimir(cabecalho("Content-Type", "text/plain"));
+imprimir(tipoJson());
+imprimir(contentLength("hello"));
+imprimir(autorizacaoBearer("token123"));
+imprimir(montarUrl("localhost", 8080, "/busca"));
+imprimir(comQuery(montarUrl("localhost", 8080, "/busca"), "q", "mag"));
 imprimir(resposta(201, "criado"));
 imprimir("ehSucesso(204):", ehSucesso(204));
-imprimir("ehErroCliente(404):", ehErroCliente(404));
 imprimir("repetir('=',10):", repetir("=", 10));
-imprimir("vazio(''):", vazio(""));
-imprimir("PORTA_PADRAO:", PORTA_PADRAO);
