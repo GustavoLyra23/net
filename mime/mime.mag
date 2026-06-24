@@ -1,0 +1,17 @@
+funcao tipoPorExtensao(ext: Texto) {
+    se (ext == "html") { retornar "text/html"; }
+    se (ext == "htm") { retornar "text/html"; }
+    se (ext == "css") { retornar "text/css"; }
+    se (ext == "js") { retornar "application/javascript"; }
+    se (ext == "json") { retornar "application/json"; }
+    se (ext == "xml") { retornar "application/xml"; }
+    se (ext == "txt") { retornar "text/plain"; }
+    se (ext == "csv") { retornar "text/csv"; }
+    se (ext == "png") { retornar "image/png"; }
+    se (ext == "jpg") { retornar "image/jpeg"; }
+    se (ext == "jpeg") { retornar "image/jpeg"; }
+    se (ext == "gif") { retornar "image/gif"; }
+    se (ext == "svg") { retornar "image/svg+xml"; }
+    se (ext == "pdf") { retornar "application/pdf"; }
+    retornar "application/octet-stream";
+}
