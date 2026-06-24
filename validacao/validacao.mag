@@ -1,0 +1,11 @@
+funcao ehPortaValida(p: Inteiro) {
+    retornar p >= 1 e p <= 65535;
+}
+
+funcao ehCodigoStatusValido(c: Inteiro) {
+    retornar c >= 100 e c < 600;
+}
+
+funcao ehPortaPrivilegiada(p: Inteiro) {
+    retornar p >= 1 e p <= 1023;
+}
