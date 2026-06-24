@@ -13,7 +13,8 @@ plus helpers to build HTTP style messages. The wire protocol is line based
 importar "net.mag"
 
 imprimir(linhaStatus(404));
-imprimir(requisicao("GET", "/api/users"));
+imprimir(requisicao(GET, "/api/users"));
+imprimir(montarUrl("localhost", 8080, "/users"));
 imprimir(resposta(200, "ok"));
 ```
 
@@ -42,11 +43,23 @@ run exemplo_http.mag
 `responder_local`, `eco`
 
 ### http/status
-`statusTexto`, `ehSucesso`, `ehErroCliente`, `ehErroServidor`
+`statusTexto`, `ehInformativo`, `ehSucesso`, `ehRedirecionamento`,
+`ehErroCliente`, `ehErroServidor`
+
+### http/metodos
+`GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `HEAD`, `OPTIONS`, `ehMetodoValido`,
+`temCorpo`
+
+### http/headers
+`contentType`, `contentLength`, `tipoTexto`, `tipoJson`, `tipoHtml`,
+`autorizacaoBearer`
 
 ### http/http
 `linhaStatus`, `requisicao`, `cabecalho`, `resposta`, `respostaOk`,
 `respostaErro`
+
+### url
+`autoridade`, `montarUrl`, `comQuery`, `maisQuery`
 
 ### utils/texto
 `repetir`, `vazio`, `naoVazio`
