@@ -1,25 +1,41 @@
 funcao statusTexto(codigo: Inteiro) {
     se (codigo == 200) { retornar "OK"; }
     se (codigo == 201) { retornar "Created"; }
+    se (codigo == 202) { retornar "Accepted"; }
     se (codigo == 204) { retornar "No Content"; }
+    se (codigo == 206) { retornar "Partial Content"; }
     se (codigo == 301) { retornar "Moved Permanently"; }
     se (codigo == 302) { retornar "Found"; }
     se (codigo == 304) { retornar "Not Modified"; }
+    se (codigo == 307) { retornar "Temporary Redirect"; }
+    se (codigo == 308) { retornar "Permanent Redirect"; }
     se (codigo == 400) { retornar "Bad Request"; }
     se (codigo == 401) { retornar "Unauthorized"; }
     se (codigo == 403) { retornar "Forbidden"; }
     se (codigo == 404) { retornar "Not Found"; }
     se (codigo == 405) { retornar "Method Not Allowed"; }
     se (codigo == 409) { retornar "Conflict"; }
+    se (codigo == 418) { retornar "I'm a teapot"; }
+    se (codigo == 422) { retornar "Unprocessable Entity"; }
     se (codigo == 429) { retornar "Too Many Requests"; }
+    se (codigo == 451) { retornar "Unavailable For Legal Reasons"; }
     se (codigo == 500) { retornar "Internal Server Error"; }
     se (codigo == 502) { retornar "Bad Gateway"; }
     se (codigo == 503) { retornar "Service Unavailable"; }
+    se (codigo == 504) { retornar "Gateway Timeout"; }
     retornar "Unknown";
+}
+
+funcao ehInformativo(codigo: Inteiro) {
+    retornar codigo >= 100 e codigo < 200;
 }
 
 funcao ehSucesso(codigo: Inteiro) {
     retornar codigo >= 200 e codigo < 300;
+}
+
+funcao ehRedirecionamento(codigo: Inteiro) {
+    retornar codigo >= 300 e codigo < 400;
 }
 
 funcao ehErroCliente(codigo: Inteiro) {
