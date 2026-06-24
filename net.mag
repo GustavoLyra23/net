@@ -1,0 +1,45 @@
+// net.mag
+// Utilitarios de rede (http/net) para a linguagem Mag.
+// Camada fina sobre os sockets nativos: ler_socket / escrever_socket.
+// O protocolo e baseado em linhas: uma linha por conexao.
+// Importe com: importar "net.mag"
+
+var PORTA_PADRAO = 8080;
+var HOST_LOCAL = "localhost";
+
+// Aguarda uma conexao e retorna a linha recebida. Bloqueante.
+funcao escutar(host: Texto, porta: Inteiro) {
+    retornar ler_socket(host, porta);
+}
+
+// Aguarda uma conexao na porta informada em localhost. Bloqueante.
+funcao escutar_local(porta: Inteiro) {
+    retornar ler_socket(HOST_LOCAL, porta);
+}
+
+// Aguarda uma conexao e envia a mensagem. Bloqueante.
+funcao responder(host: Texto, porta: Inteiro, mensagem: Texto) {
+    escrever_socket(host, porta, mensagem);
+}
+
+// Envia a mensagem em localhost na porta informada. Bloqueante.
+funcao responder_local(porta: Inteiro, mensagem: Texto) {
+    escrever_socket(HOST_LOCAL, porta, mensagem);
+}
+
+// Monta uma resposta de sucesso (protocolo de linha simples).
+funcao resposta_ok(corpo: Texto) {
+    retornar "200 OK " + corpo;
+}
+
+// Monta uma resposta de erro com codigo numerico.
+funcao resposta_erro(codigo: Inteiro, corpo: Texto) {
+    retornar codigo + " ERRO " + corpo;
+}
+
+// Eco: aguarda uma linha e devolve a mesma linha precedida de "eco:".
+funcao eco(host: Texto, porta: Inteiro) {
+    var recebido = ler_socket(host, porta);
+    escrever_socket(host, porta, "eco: " + recebido);
+    retornar recebido;
+}
