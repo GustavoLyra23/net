@@ -69,3 +69,20 @@ run exemplo_http.mag
 Mag native sockets open and close one connection per call and work line by
 line, so this is not a full HTTP server. The HTTP module builds message
 strings useful for simple text protocols over TCP.
+
+### mime
+`tipoPorExtensao`
+
+### validacao
+`ehPortaValida`, `ehCodigoStatusValido`, `ehPortaPrivilegiada`
+
+## Tests
+
+Tests live in `testes/` and run on the real Mag interpreter.
+
+```
+MAG_JAR=/path/to/mag.jar bash run_tests.sh
+```
+
+CI (`.github/workflows/ci.yml`) builds the Mag interpreter from source and runs
+the full suite on every push.
